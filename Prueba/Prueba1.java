@@ -8,7 +8,7 @@ public class Prueba1 {
         int longitud2 = 0;
         int x = 0;
         int y = 0;
-        char letra1;
+        char letra3;
         char letra2;
 
         System.out.println("Por favor introduzca una palabra: ");
@@ -26,13 +26,13 @@ public class Prueba1 {
 
         do {
 
-            letra1 = palabra2.charAt(x);
+            letra3 = palabra2.charAt(x);
             letra2 = palabra.charAt(longitud2 - 1);
 
-            if (letra1 == letra2) {
+            if (letra3 == letra2) {
                 x++;
                 longitud2--;
-            } else if (letra1 != letra2){
+            } else if (letra3 != letra2){
                 y = -1;
                 break;
             }
