@@ -1,0 +1,17 @@
+# Desarrollo Web en Entorno Servidor
+# Docker
+
+version: '3'
+
+services:
+    #
+    # WEB
+    web:
+        image: php:8.1-apache-buster
+        container_name: relacion-1
+        volumes:
+            - ./html:/var/www/html
+        ports:
+            - '80:80'
+    #
+    # DATABASE

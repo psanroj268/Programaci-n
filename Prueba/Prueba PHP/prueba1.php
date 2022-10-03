@@ -7,6 +7,8 @@
     <title>Prueba</title>
 </head>
 <body>
-    Hola Mundo PHP
+    <?php
+        echo "Hola mundo";
+    ?>
 </body>
 </html>
