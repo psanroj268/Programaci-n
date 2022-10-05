@@ -1,0 +1,8 @@
+a. !($a != $b) = false;
+b. $a != $b = true;
+c. !(($a + $b) > ($a * $b)) = true;
+d. ($a > $b) || (! ($a <= $a -5)) = true;
+e. !(!($a != $b) && ($b <= $a + 15)) = true;
+f. $c ?? null ?? $b ?? $a = 18;
+g. $a ?? null ?? $b = 10;
+h. null ?? $b ?? $a = 18;

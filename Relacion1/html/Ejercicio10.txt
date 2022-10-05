@@ -1,0 +1,1 @@
+Creando un array bidimensional en el que un indice cuente las personas y el otro almacene los datos;

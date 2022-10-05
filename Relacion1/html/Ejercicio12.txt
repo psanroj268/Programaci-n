@@ -1,0 +1,10 @@
+a. $info[1]["Fratelli"][2];
+
+b. 
+$info[0][2] = 1985;
+$info[3] = 27, 2020, "Reunited Apart";
+$info[4][0] = no existe el indice 4;
+$info[1]["cast"][0][0] = "Mickey";
+$info[4][5] = no existe el indice 4;
+
+c. string_r o var_dump;
