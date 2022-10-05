@@ -7,4 +7,4 @@ $info[4][0] = no existe el indice 4;
 $info[1]["cast"][0][0] = "Mickey";
 $info[4][5] = no existe el indice 4;
 
-c. string_r o var_dump;
+c. var_dump;
