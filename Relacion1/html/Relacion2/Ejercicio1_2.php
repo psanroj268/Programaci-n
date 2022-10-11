@@ -18,9 +18,8 @@ $a = 5;
 
 for ($i = 1; $i <= $a; $i++) {
 
-    for ($x = 1; $x <= $a - $i; $x++) {
-        echo "&nbsp";
-    }
+    for ($x = 1; $x <= $a - $i; $x++) echo "$nbsp";
+    
     $z = 2;
     for ($j = 1; $j <= ($i * 2) - 1; $j++) {
 
