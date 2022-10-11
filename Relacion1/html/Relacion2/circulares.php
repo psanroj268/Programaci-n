@@ -1,7 +1,7 @@
 <?php
 
-$s = array(5, 1, 3, 4);
-$v = array(3, 4, 5, 1);
+$s = array(1, 0, 1, 1);
+$v = array(1, 1, 1, 0);
 
 $cuenta = 0;
 $circular = false;
@@ -11,7 +11,7 @@ foreach ($s as $contador) {
 }
 
 for ($i = 0; $i < $cuenta; $i++) {
-    if ($s[$i] == $v[0]) {
+    if (($s[$i] == $v[0]) && ($s[$i + 1] == $v[1])){
         $cuenta2 = $i;
         $i = 5;
     }
