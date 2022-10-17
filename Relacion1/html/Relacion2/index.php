@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title></title>
 </head>
 
@@ -46,6 +47,22 @@
             "poster" => "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7zzHG46UG43IkfdEVKuCo2L84eM.jpg"
         ],
 
+        [
+            "titulo" => "Rick y Morty",
+            "plataforma" => "Netflix",
+            "argumento" => "Comedia animada que narra las aventuras de un científico loco Rick Sánchez, que regresa después de 20 años para vivir con su hija, su marido y sus hijos Morty y Summer.",
+            "nota" => 87,
+            "poster" => "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5Yiep9EwcQgLolg013ETBVqHxuD.jpg"
+        ],
+
+        [
+            "titulo" => "The Boys",
+            "plataforma" => "Amazon Prime",
+            "argumento" => "La serie tiene lugar en un mundo en el que los superhéroes representan el lado oscuro de la celebridad y la fama.",
+            "nota" => 85,
+            "poster" => "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8Aes6nbECN7j61PEnPmz3eQKE0x.jpg"
+        ],
+
     ];
 
 
@@ -53,19 +70,26 @@
 
     <h1>Series que he visto</h1>
 
-    <ul>
+    <div id="container">
 
         <?php foreach ($datos as $series) : ?>
 
+        <div id="lista">
 
-            <li><?= "<h3>{$series["titulo"]}</h3>" ?>
+            <div id="container2">
+
+                <img src="<?= "{$series["poster"]}" ?>" alt="" width="30%">
+
+                <?= "<h3>{$series["titulo"]}</h3>" ?>
                 <?= "<h5>{$series["nota"]}% - {$series["plataforma"]}</h5>" ?>
-                <?= "<p>{$series["argumento"]}</p>" ?></li>
+                <?= "<p>{$series["argumento"]}</p>" ?>
+            </div>
+
+        </div>
 
         <?php endforeach; ?>
-
-    </ul>
-
+     
+    </div>
 </body>
 
 </html>
