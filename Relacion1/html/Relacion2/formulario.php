@@ -1,18 +1,41 @@
 <?php
 
 	const DATOS = [
-					["usr" => "javier", "pwd" => "12345678"],
-					["usr" => "marta",  "pwd" => "12345678"],
-					["usr" => "luis",   "pwd" => "12345678"],
-					["usr" => "laura",  "pwd" => "12345678"],
-					["usr" => "angel",  "pwd" => "12345678"],
-					["usr" => "manolo", "pwd" => "12345678"],
+					["usr" => "javier", "pwd" => "123456781"],
+					["usr" => "marta",  "pwd" => "123456782"],
+					["usr" => "luis",   "pwd" => "123456783"],
+					["usr" => "laura",  "pwd" => "123456784"],
+					["usr" => "angel",  "pwd" => "123456785"],
+					["usr" => "manolo", "pwd" => "123456786"],
 				  ] ;
 
+
+    function buscaUsuario($usr, $pwd):bool {
+        $res = array_filter(DATOS, function($item) use ($usr, $pwd){
+            return ($item["usr"] == $usr and $item["pwd"] == $pwd);
+        }) ;
+
+        return !empty($res) ;
+
+        /*$i = 0 ;
+        $encontrado = false ;
+
+        while($i < count(DATOS) and ($encontrado==false)):
+            if(DATOS[$i]["usr"] == $usr and DATOS[$i]["pwd"] == $pwd) {
+                $encontrado = true;
+            }
+
+            $i++ ;
+
+        endwhile;
+
+        return $encontrado;*/
+    }
+    
 	// Iniciar la sesión
 	session_start() ;	
 
-	if (!empty($_SESSION)) header("location: main.php") ;
+	if (isset($_SESSION["usuario"])) header("location: main.php") ;
 
 	define("USUARIO",  "miusuario") ;
 	define("PASSWORD", "12345678") ;
@@ -25,8 +48,7 @@
 
 		if ($_SESSION["token"] == $_POST["_token"]):
 
-			if (($_POST["usr"] == USUARIO) and 
-				($_POST["pwd"] == PASSWORD)):
+			if (buscaUsuario($_POST["usr"],$_POST["pwd"])):
 
 				$_SESSION["usuario"] = $_POST["usr"] ;
 				$_SESSION["inicio"] = time() ;
@@ -37,7 +59,7 @@
 			else:
 			 echo "Nombre de usuario o contraseña incorrectos." ;
 			endif ;
-
+            
 		else:
 			echo "Solicitud caducada." ;
 		endif ;

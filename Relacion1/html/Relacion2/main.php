@@ -1,7 +1,7 @@
 <?php
     session_start() ;
 
-    if (empty($_SESSION)) header("location:formulario.php");
+    if (!isset($_SESSION["usuario"])) header("location: formulario.php") ;
 
 ?>
 
