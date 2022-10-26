@@ -50,8 +50,10 @@
 
 			if (buscaUsuario($_POST["usr"],$_POST["pwd"])):
 
+                $_SESSION["autentificado"] = "SI";
+
 				$_SESSION["usuario"] = $_POST["usr"] ;
-				$_SESSION["inicio"] = time() ;
+				$_SESSION["inicio"] = date("Y-n-j H:i:s");
 
 				// Redirigimos a la página principal
 				header("location:main.php") ;
