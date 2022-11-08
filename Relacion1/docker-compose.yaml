@@ -7,12 +7,14 @@ services:
     #
     # WEB
     web:
-        image: php:8.1-apache-buster
+        build: .
         container_name: relacion-1
         volumes:
             - ./html:/var/www/html
         ports:
             - '80:80'
+        links:
+            - 'db:db'
     #
     # DATABASE
     db:
@@ -32,10 +34,11 @@ services:
         image: phpmyadmin:latest
         container_name: dwes-phpmyadmin
         restart: always
-
-        environment:
-            PMA_HOST: db
-            PMA_USER: 'root'
-        
         ports:
          - '8080:80'
+        environment:
+            - PMA_HOST=db
+            - MYSQL_USER=root
+            - PMA_ARBITRARY=1
+        
+        
