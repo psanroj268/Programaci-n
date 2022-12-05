@@ -27,11 +27,22 @@
     <div class="container">
         <h1>Inventario</h1>
 
-        <form action="borrar.php" method="post">
-			<input id="id" type="hidden" name="id" value="" />
-		</form>
+        <div class="row">
+			<div class="col d-flex justify-content-end">
+				<a href="insertar.php" class="btn btn-primary">Crear fruta</a>
+			</div>
+		</div>
 
-        <table class="table">
+        <!--<form action="borrar.php" method="post">
+			<input id="id" type="hidden" name="id" value="" />
+		</form>-->
+        <div class="row">
+            <div class="col-8">
+
+            
+
+        
+        <table id="tabla" class="table">
             <thead>
                 <tr>
                     <th>Fruta</th>
@@ -48,8 +59,8 @@
                         <td><?= $fila["frutas"] ?></td>
                         <td><?= $fila["Precio"] ?></td>
                         <td><a href="" class="btn btn-primary">editar</a></td>
-                        <td><button class="btn btn-danger borrar" 
-							        data-id="<?= $fila["idFru"] ?>">Borrar</button></td>
+                        <td><a href="borrar.php?id=<?= $fila["idFru"] ?>"
+									   class="btn btn-danger">Borrar</a></td>
 
                     </tr>
 
@@ -58,12 +69,14 @@
             </tbody>
         </table>
 
+        </div>
+        </div>
     </div>
 
     <script>		
 		//console.log($("#tabla")) ;
 
-		$(".borrar").click((evento) => 
+		/*$(".borrar").click((evento) => 
 		{
 
 			var id = $(evento.target).data("id") ;
@@ -71,7 +84,7 @@
 			$("#id").attr("value", id) ;
 			$("form").submit() ;
 		
-		}) ;
+		}) ;*/
 			
 
 	</script>
